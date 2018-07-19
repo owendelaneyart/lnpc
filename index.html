@@ -28,7 +28,7 @@
 
 <script>
 var loopAssets = [
-  { contentUrl: "lnpc-2.jpg", contentType: "image/jpg", mediaType:"IMAGE" },
+  { contentUrl: "lnpc-1.jpg", contentType: "image/jpg", mediaType:"IMAGE" },
   { contentUrl: "https://s3-eu-west-1.amazonaws.com/www.nationalparkcity.london/videos/nfts/Gintares+LNPC+Final+animation.mp4", contentType: "video/mp4", mediaType: "VIDEO"}
 ];
 var previewContainer = $(".previews-container");
@@ -58,7 +58,6 @@ function appendMediaElement(asset) {
     previewContainer.html(mediaEl);
     // image: go to the next media after 5 seconds
     setTimeout("changeMedia()", 5000);
-    location.reload();
   } else if(asset.mediaType == "VIDEO") {
     mediaEl = "<video id='lp-preview-video' autoplay controls>";
     mediaEl += "<source src='"+ asset.contentUrl + "' type='" + asset.contentType + "'>";
