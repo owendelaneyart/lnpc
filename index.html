@@ -27,6 +27,17 @@
 </div>
 
 <script>
+window.onload = function() {
+    var image = document.getElementById("img");
+
+    function updateImage() {
+        image.src = image.src.split("?")[0] + "?" + new Date().getTime();
+    }
+
+    setInterval(updateImage, 1000);
+}
+</script>
+<script>
 var loopAssets = [
   { contentUrl: "lnpc.jpeg", contentType: "image/jpg", mediaType:"IMAGE" },
   { contentUrl: "https://s3-eu-west-1.amazonaws.com/www.nationalparkcity.london/videos/nfts/Gintares+LNPC+Final+animation.mp4", contentType: "video/mp4", mediaType: "VIDEO"}
