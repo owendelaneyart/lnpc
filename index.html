@@ -54,6 +54,7 @@ function changeMedia() {
 function appendMediaElement(asset) {
   var mediaEl = "";
   if(asset.mediaType == "IMAGE") {
+    location.reload();
     mediaEl =  '<img id="lp-preview-image" src="' + asset.contentUrl + '">';
     previewContainer.html(mediaEl);
     // image: go to the next media after 5 seconds
