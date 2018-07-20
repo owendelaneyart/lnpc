@@ -14,17 +14,15 @@
   width: 100%;
 }
 </style>
-<script language=" JavaScript" >
-<!--
-function LoadOnce()
-{
-window.location.reload();
-}
-//-->
-</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
-
+<body>
+<script type="text/javascript">
+if (location.href.indexOf('reload')==-1)
+{
+   location.href=location.href+'?reload';
+}
+</script>
 <div class="item previews-container">
 </div>
 
@@ -36,4 +34,5 @@ window.location.reload();
   }, 3000);
 </script>
 
+</body>
 </html>
