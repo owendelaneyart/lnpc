@@ -20,7 +20,7 @@
 <div class="item previews-container">
 </div>
 
-<img id="lp-preview-image" src="lnpc-1.jpg?nocache=<?php echo time(); ?>" />
+<img id="lp-preview-image" src='lnpc-1.jpg?hash=" . filemtime('mychart.png') . "' />
 
 <script>
   var timer = setTimeout(function() {
