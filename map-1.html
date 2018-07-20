@@ -17,18 +17,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 <body>
-<script type="text/javascript">
-window.onload = function () {
-    if (! localStorage.justOnce) {
-        localStorage.setItem("justOnce", "true");
-        window.location.reload();
-    }
-}
-</script>
 <div class="item previews-container">
 </div>
 
-<img id="lp-preview-image" src="lnpc-1.jpg?m=' . filemtime('lnpc-1.jpg') . '"></img>
+<img id="lp-preview-image" src="lnpc-1.jpg?v=<?php echo Date("Y.m.d.G.i.s")?>" />
 
 <script>
   var timer = setTimeout(function() {
