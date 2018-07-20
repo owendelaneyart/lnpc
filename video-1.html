@@ -28,7 +28,8 @@
 
 var video = document.getElementById('lp-preview-video');
 video.addEventListener('ended',function() {
-  window.location.href = 'map-1.html?v=<?php echo Date("Y.m.d.G.i.s")?>';})
-
+  window.location.href = 'map-1.html' + '?n=' + new Date().getTime();
+  }
+)
 </script>
 </html>
