@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
 <style>
 .previews-container {
   position: fixed;
@@ -19,10 +22,7 @@
 <body>
 <div class="item previews-container">
 </div>
-<script>
-var img = document.getElementById('lp-preview-image').src = "lnpc-1.jpg?random="+new Date().getTime();
-</script>
-<img id="lp-preview-image" />
+<img id="lp-preview-image" src="lnpc-1.jpg" />
 
 <script>
   var timer = setTimeout(function() {
