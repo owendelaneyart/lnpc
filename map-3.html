@@ -22,13 +22,12 @@
 <body>
 <div class="item previews-container">
 </div>
-<script type="text/javascript">
-  var container = document.getElementById("lp-preview-image");
-  var image = document.createElement("img");
-  image.setAttribute("src", "lnpc-1.jpg?rev="+new Date().getTime());
-  container.appendChild(image);
-</script>
 <img id="lp-preview-image" src="lnpc-1.jpg" />
+
+<script type="text/javascript">
+  var image = document.getElementById("lp-preview-image");
+  image.src = "lnpc-1.jpg?rev=" + new Date().getTime();
+</script>
 
 <script>
   var timer = setTimeout(function() {
