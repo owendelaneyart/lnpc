@@ -18,9 +18,11 @@
 </head>
 <body>
 <script type="text/javascript">
-if (location.href.indexOf('reload')==-1)
-{
-   location.href=location.href+'?reload';
+window.onload = function () {
+    if (! localStorage.justOnce) {
+        localStorage.setItem("justOnce", "true");
+        window.location.reload();
+    }
 }
 </script>
 <div class="item previews-container">
