@@ -28,7 +28,7 @@ window.onload = function () {
 <div class="item previews-container">
 </div>
 
-<img id="lp-preview-image" src="lnpc-1.jpg"></img>
+<img id="lp-preview-image" src="lnpc-1.jpg?m=' . filemtime('lnpc-1.jpg') . '"></img>
 
 <script>
   var timer = setTimeout(function() {
