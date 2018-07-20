@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
 <style>
 .previews-container {
   position: fixed;
@@ -14,26 +17,26 @@
   width: 100%;
 }
 </style>
-<script language=" JavaScript" >
-<!--
-function LoadOnce()
-{
-window.location.reload();
-}
-//-->
-</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
-
+<body>
 <div class="item previews-container">
 </div>
-
-<img id="lp-preview-image" src="lnpc-1.jpg"></img>
+<div id="lp-preview-image">
+  <script type="text/javascript">
+    var container = document.getElementById("lp-preview-image");
+    var image = document.createElement("img");
+    image.setAttribute("src", "lnpc-1.jpg?rev="+new Date().getTime());
+    container.appendChild(image);
+  </script>
+</div>
+<img id="lp-preview-image" src="lnpc-1.jpg" />
 
 <script>
   var timer = setTimeout(function() {
     window.location='video-3.html'
-  }, 3000);
+  }, 9000);
 </script>
 
+</body>
 </html>
