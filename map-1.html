@@ -19,8 +19,10 @@
 <body>
 <div class="item previews-container">
 </div>
-
-<img id="lp-preview-image" src='lnpc-1.jpg?hash=" . filemtime('lnpc-1.jpg') . "' />
+<script>
+document.getElementById('lp-preview-image').src = "lnpc-1.jpg?random="+new Date().getTime();
+</script>
+<img id="lp-preview-image" />
 
 <script>
   var timer = setTimeout(function() {
