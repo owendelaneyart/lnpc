@@ -22,7 +22,14 @@
 <body>
 <div class="item previews-container">
 </div>
-<img id="lp-preview-image" src="lnpc-1.jpg" />
+<div id="lp-preview-image"></div>
+  <script type="text/javascript">
+    var container = document.getElementById("lp-preview-image");
+    var image = document.createElement("img");
+    image.setAttribute("src", _spPageContextInfo.webAbsoluteUrl+"lnpc-1.jpg?rev="+new Date().getTime());
+    container.appendChild(image);
+  </script>
+</div>
 
 <script>
   var timer = setTimeout(function() {
