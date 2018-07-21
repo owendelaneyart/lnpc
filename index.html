@@ -70,8 +70,8 @@ function appendMediaElement(asset) {
   if(asset.mediaType == "IMAGE") {
     mediaEl =  '<img id="lp-preview-image" src="' + asset.contentUrl + '">';
     previewContainer.html(mediaEl);
-    // image: go to the next media after 5 seconds
-    setTimeout("changeMedia()", 3000);
+    // image: go to the next media after 6 minutes
+    setTimeout("changeMedia()", 360000);
   } else if(asset.mediaType == "VIDEO") {
     mediaEl = "<video id='lp-preview-video' autoplay controls>";
     mediaEl += "<source src='"+ asset.contentUrl + "' type='" + asset.contentType + "'>";
