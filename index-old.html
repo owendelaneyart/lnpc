@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.previews-container {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+}
+#lp-preview-image {
+  display: block;
+  position: fixed;
+  height: auto;
+  width: 100%;
+}
+
+#lp-preview-video {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+
+<div class="item previews-container">
+</div>
+
+<script>
+var loopAssets = [
+  { contentUrl: "lnpc-1.jpg", contentType: "image/jpg", mediaType:"IMAGE" },
+  { contentUrl: "https://s3-eu-west-1.amazonaws.com/www.nationalparkcity.london/videos/nfts/Gintares+LNPC+Final+animation.mp4", contentType: "video/mp4", mediaType: "VIDEO"}
+];
+var previewContainer = $(".previews-container");
+var curIndex = 1;
+
+appendMediaElement(loopAssets[0]);
+
+// removed the setInterval but kept the function
+function changeMedia() {
+
+  if(curIndex >= loopAssets.length) {
+    // modified this so it would display the first image/video when looping
+    curIndex = 0;
+  }
+
+  appendMediaElement(loopAssets[curIndex]);
+
+  curIndex++;
+
+};
+
+
+function appendMediaElement(asset) {
+  var mediaEl = "";
+  if(asset.mediaType == "IMAGE") {
+    mediaEl =  '<img id="lp-preview-image" src="' + asset.contentUrl + '">';
+    previewContainer.html(mediaEl);
+    // image: go to the next media after 5 seconds
+    setTimeout("changeMedia()", 300000);
+  } else if(asset.mediaType == "VIDEO") {
+    mediaEl = "<video id='lp-preview-video' autoplay controls>";
+    mediaEl += "<source src='"+ asset.contentUrl + "' type='" + asset.contentType + "'>";
+    mediaEl += "</video>";
+    previewContainer.html(mediaEl);
+    // video: go to the next media when the video ends
+    document.getElementById("lp-preview-video").addEventListener("ended", function(e) {
+      changeMedia();
+    });
+  }
+}
+</script>
+</html>
